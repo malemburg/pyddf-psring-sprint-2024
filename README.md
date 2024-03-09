@@ -1,4 +1,6 @@
 # Python Meeting Düsseldorf - Spring Sprint 2024
+- Python Meeting Düsseldorf: https://www.pyddf.de/
+- Sprint Meetup page: https://www.meetup.com/python-meeting-dusseldorf/events/299529260/
 
 ## Experiments with Taipy
 

@@ -10,6 +10,7 @@
 - Documentation: https://docs.taipy.io/en/latest/
 - Get started: https://docs.taipy.io/en/latest/getting_started/
 - Intro video: https://www.youtube.com/watch?v=PDkP1jxXfiA
+- Weather data for Düsseldorf: https://meteostat.net/de/station/10400?t=2024-02-25/2024-03-03
 
 ### Prepare env
 - make install-venv install-requirements

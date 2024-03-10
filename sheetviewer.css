@@ -1,0 +1,8 @@
+.selected-row {
+    background-color: green;
+}
+
+/* Since width doesn't work on selectors, change them globally */
+.wide-selector {
+  min-width: 100%;
+}

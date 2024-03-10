@@ -1,4 +1,4 @@
-# Python Meeting Düsseldorf - Spring Sprint 2024
+ # Python Meeting Düsseldorf - Spring Sprint 2024
 - Python Meeting Düsseldorf: https://www.pyddf.de/
 - Sprint Meetup page: https://www.meetup.com/python-meeting-dusseldorf/events/299529260/
 
@@ -44,3 +44,27 @@
 - There doesn't appear to be a way to select rows of a table and interact with them
 	- It is possible to set a callback when selecting rows and marking selected rows would be possible via a CSS callback, but that's cumbersome
 	- Should be a standard parameter of tables
+- When defining widget properties, just listing the property name will implicitly add an `=True`, e.g. `|filter|` is the same as `|filter=True|`
+
+### sheetviewer.py
+- Editing dataframes should be done by copying the state.dataframe and then assigning back the edited version
+	- Otherwise Taipy doesn't notice the data change
+- on_action on tables gets called when a row is selected
+	- this gets data in form of a dict {'action': 'on_select', 'index': 0, 'col': 'colname', 'args': []}
+	- unfortunately, the column name is passed back, not the integer value, which makes it difficult to figure out exactly which column was clicked if column names are not unique
+- Table `height` property doesn't work with % notation
+	- px notation appears to work
+- File upload widget saves to /tmp
+	- doesn't clean up after itself
+	- appends numbers to the filename to make them unique
+- Styling
+	- see https://docs.taipy.io/en/latest/manuals/gui/styling/#style-sheets
+	- passing in `css_file` to the Gui constructor doesn't appear to work
+		- could be a mistake on my side: adding this keyword to the .run() method doesn't create an error and I may have placed it there
+	- what does work is naming a CSS file after the file defining the app
+- The selected property on tables dosen't do anything much
+	- better build your own selection mechanism
+- The table `auto_loading` property doesn't work reliably and messes up the CSS it seems
+- Table property `page_size_options` doesn't appear to work. `page_size` on its own does work.
+- Selector property `width` doesn't work
+	- as a work-around, define a wide-selector CSS class and set this using class_name=wide-selector on the widget
